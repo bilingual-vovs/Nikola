@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>Your Goals</title>
+</head>
+<body>
+
+	<script>
+        // let ans = String(prompt())
+        // let res = " "
+        // i = ans.length - 1
+        // while (i >= 0) {
+        //     res += ans[i]
+        //     i--
+        // }
+        // alert(res)
+
+
+         // ______________________________________________________
+        
+        // let a = Number(prompt()), b = Number(prompt()), c = Number(prompt())
+        // while (a < 1 && a > 10000 && b < 1 && b > 10000 && c < 1 && c > 10000){
+        //     alert("Numbers must be less than 1 and less than 10 000")
+        //     a = prompt()
+        //     b = prompt()
+        //     c = prompt()
+        // }
+        // let biggest = 0, smallest = 0
+        // if (a >= b && a >= c){
+        //     biggest = a
+        //     if (b <= c){
+        //         smallest = b
+        //     }
+        //     else {
+        //         smallest = c
+        //     }
+        // }
+        // else if (b >= a && b >= c) {
+        //     biggest = b
+        //     if (a <= c){
+        //         smallest = a
+        //     }
+        //     else {
+        //         smallest = c
+        //     }
+        // }
+        // else {
+        //     biggest = c
+        //     if (b <= a){
+        //         smallest = b
+        //     }
+        //     else {
+        //         smallest = a
+        //     }
+        // }
+        // alert(biggest + smallest)
+
+        //__________________________________________________________
+
+        // let inpu = prompt()
+        // let outpu = []
+        // let preans = ""
+        // for (let i = 0; i < inpu.length; i++){
+        //     if (inpu[i] == " "){
+        //         outpu.push(preans)
+        //         preans = ""
+        //     }
+        //     else {
+        //         preans = preans + inpu[i]
+        //     }
+        
+            
+        // }
+        // for (let r = 0; r < outpu.length; r++){
+        //      if (outpu[r] == ""){
+        //          outpu.splice(r, 1)
+        //     }
+        // }
+        // outpu.push(preans)
+        // for (let i = 0; i < outpu.length; i++){
+        //     outpu[i] = Number(outpu[i])
+        // }
+        // let biggest = 0, smallest = outpu[0]
+        // for (let i = 0; i < outpu.length; i++){
+        //     if (outpu[i] >= biggest){
+        //         biggest = outpu[i]
+        //     }
+        //     if (outpu[i] <= smallest){
+        //         smallest = outpu[i]
+        //     }
+        // }
+        // alert(biggest - smallest)
+
+        //____________________________________________________________
+
+        let input = prompt()
+        let carpets = [], preans = ""
+        for (let i = 0; i < input.length; i++){
+            if (input[i] == ","){
+                carpets.push(preans)
+                preans = ""
+            }
+            else {
+                preans = preans + input[i]
+            }
+        }
+        carpets.push(preans)
+        let preare = []
+        preans = ""
+        for (let a = 0; a < carpets.length; a++){
+            for (let i = 0; i < carpets[a].length; i++){
+                if (carpets[a][i] == " "){
+                    preare.push(preans)
+                    preans = ""
+                }
+                else {
+                    preans = preans + carpets[a][i]
+                }
+            }
+            preare.push(preans)
+            preans = ""
+            for (let r = 0; r < preare.length; r++){
+                if (preare[r] == ""){
+                    preare.splice(r, 1)
+                }
+            }
+            carpets[a] = preare
+            preare = []
+            
+        }
+        let smallest = 0
+        for (let i = 0; carpets.length; i++){
+            carpets[i][0] = Number(carpets[i][0])
+            carpets[i][1] = Number(carpets[i][1])
+            if (carpets[i][0] < carpets[i][1]){
+                smallest = carpets[i][0]
+            }
+            else {
+                smallest = carpets[i][1]
+            }
+            carpets[i][2] = Number(carpets[i][2])
+            if (smallest >= carpets[i][1] * 2){
+                carpets[i].push("Yes")
+            }
+            else{
+                carpets[i].push("No")
+            }
+            carpets[i].join(" ")
+        }
+        carpets.join(", ")
+        alert(carpets)
+    </script>
+</body>
+</html>
