@@ -130,7 +130,7 @@
             
         }
         let smallest = 0
-        for (let i = 0; carpets.length; i++){
+        for (let i = 0; i < carpets.length; i++){
             carpets[i][0] = Number(carpets[i][0])
             carpets[i][1] = Number(carpets[i][1])
             if (carpets[i][0] < carpets[i][1]){
@@ -140,7 +140,7 @@
                 smallest = carpets[i][1]
             }
             carpets[i][2] = Number(carpets[i][2])
-            if (smallest >= carpets[i][1] * 2){
+            if (smallest >= carpets[i][2] * 2){
                 carpets[i].push("Yes")
             }
             else{
